@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// @import"bulma"
+
+ header {
+    width: 100%;
+    padding: 30px 4% 10px;
+    background-color: #fff;
+}
+
+
+ body {
+  background-color:  #FFCB72;
+  background-image:
+  radial-gradient( #FFFFFF 10%, transparent 30%);
+  background-size: 20px 20px;
+  font-family: cursive;
+ }
+
+ h2 {
+  text-align: center;
+ }
+ .card-text {
+  text-align: center;
+  font-weight: bold;
+ }
+ .card-img {
+  text-align: center;
+ }
+ p {font-weight: bold}
+
+ footer {
+    background: #000033;
+    width: 100%
+ }
+
+.nav {
+    display: table;
+    width: 100%;
+    background: #000033;
+}
+.nav__item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+// .nav__item + .nav__item {
+    // border-left: 1px solid #CCC;
+.nav__item a {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.box1 {
+    width: 60%;
+    margin:20px 10px;
+    background:white;
+    padding:1em;
+    border: 10px outset gray;
+    text-align: left;
+    
+}

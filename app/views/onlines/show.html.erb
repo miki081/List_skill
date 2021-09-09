@@ -1,0 +1,35 @@
+<p id="notice"></p>
+  <div class="container">
+   <div class= "col-sm-12 col-md-8 col-lg-5 px-sm-0 mx-auto">
+<h2>Onlien_Event</h2>
+<div class="card-container">
+    <div class="card-img">  
+     <h4><%= @online.event_title %></h4>
+     <a><%= image_tag @online.post_image.to_s, class: 'sized' %></a>
+    </div>
+    
+    <div class="card-text"><h7>nick_name(企画者)</h7>
+    <h6><%= link_to @user.nick_name, user_path(@user.id) %></h6></div>
+    
+    <div class="card-text">
+        <td>イベント紹介</td>
+        <p><%= @online.event_capital %></p>
+    </div>
+    
+    <div class="card-text">
+     <td>ジャンル名</td>    
+     <td><%= @online.genre.name %></td>
+    </div>
+    
+    
+    <div class="card-text">
+        <td>アクセス（URL）</td>
+        <p><%= @online.page %></br></p>
+    </div>
+
+  <% if @user.id == current_user.id %>
+    <td><%= link_to "編集", edit_online_path(@online) %></td>
+    <td><%= link_to 'Destroy', online_path(@online), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
+  <% end %>
+</div>
+</div>

@@ -1,0 +1,81 @@
+<!--<h2>検索</h2>-->
+<!--<%#= form_tag(users_path, method: :get) do %>-->
+<!--  <%#= text_field_tag :search %>-->
+<!--  <%#= submit_tag 'Search', name: nil %>-->
+<!--<%# end %>-->
+
+<p id="notice"></p>
+   <div class='container px-5 px-sm-0'>
+    <div class='row'>
+     <div class='col-md-3' >
+    </div>
+   </div>
+  </div>
+<div class="card-container">
+    <div class="card-img">
+<div class="row mx-auto mt-3">
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th><h2>Recipe一覧</h2></th>
+      <th></th>
+      <th colspan="2"></th>
+    </tr>
+   </thead>
+  </tbody>
+
+
+<div class="row mx-auto mt-3">
+　<% @recipes.each do |recipe| %>
+<tr>
+  <td><h2><%= recipe.recipe_title%></h2></td>
+  <td><%= link_to 'show', recipe_path(recipe), class: "btn btn-sm btn-success"  %></td>
+</tr>
+ </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+ <h1>New Event!!</h1>
+<div class="container">
+    <div class="row">
+    <% @events.each do |event| %>
+    <div class="col-lg-3 col-md-6 mb-4">
+          <a><%= image_tag event.post_image.to_s, class: 'sized' %></a><br>
+          <span class="red-border px-3">
+               <%= link_to event_path(event) do %>
+        <%= event.event_title %></span>
+         <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+ <h1>New Online_Event!!</h1>
+<div class="container">
+<div class="row">
+    <% @onlines.each do |online| %>
+  <div class="col-lg-3 col-md-6 mb-4">
+    <a><%= image_tag online.post_image.to_s, class: 'sized' %></a><br>
+    <span class="red-border px-3">
+       <%= link_to online_path(online) do %>
+      <%= online.event_title%></h3></td>
+    <% end %>
+ </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-4 offset-md-4 py-2  mt-5">
+    <%= paginate @events %>
+    <%= paginate @recipes %>
+   </div>
+  </div>
+</div>
+</div>

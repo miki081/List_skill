@@ -1,0 +1,9 @@
+  <% @events.each do |event| %>
+          <tr>
+            <td><%= link_to admins_event_path(event) do %>
+              <%= event.event_title %>
+              <%= event.genre_id %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>  

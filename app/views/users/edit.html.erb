@@ -1,0 +1,29 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  <h2>introduction</h2>
+    <%= form_with model: @user, local:true do |f| %>
+   <div class="field">
+	<%= f.label :nick_name %></br>
+	<%= f.text_field :nick_name, class: "name" %>
+</div>
+<div class="field">
+   <%= f.label :post_image %></br>
+   <%= f.file_field :post_image, class: 'form-control mb-3', accept: 'image/*',　size: '100x100' %>
+   <%= f.hidden_field :post_image_cache %>
+</div>
+<div class="field">
+   <div class="form-group">
+	<%= f.label :introduction %></br>
+	<%= f.text_area :introduction, size: "40x5", :maxlength => 200, class: "introduction" %>
+</div>
+
+<div class="actions"></br>
+ <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+</div>
+<% end %>
+</div>
+<div class="col-2 d-flex flex-column align-items-end">
+      <%= link_to "退会する" , withdrow_user_path(@user), class: "btn btn-danger mt-auto" %>
+    </div>
+</div>

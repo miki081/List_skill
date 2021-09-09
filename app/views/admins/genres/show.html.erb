@@ -1,0 +1,46 @@
+
+  <div class="row">
+    <h2>会員情報 詳細</h2>
+  </div>
+
+  <div class="row mt-3">
+    <div class="offset-sm-1 col-sm-7">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>顧客ID</td>
+            <td><%= @user.id %>
+              <% if @user.is_valid == true %>
+                <div class="bg-info d-inline text-white p-1 ml-3 rounded">
+                  有効会員
+                </div>
+              <% else %>
+                <div class="bg-warning d-inline text-white p-1 ml-3 rounded">
+                  退会済み
+                </div>
+              <% end %>
+
+            </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>ニックネーム</td>
+            <td><%= @user.nick_name %></td>
+          </tr>
+
+          <tr>
+            <td>メールアドレス</td>
+            <td><%= @user.email %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-3 my-auto">
+      <%= link_to "編集する", edit_admins_user_path, class: "btn btn-primary" %>
+      <%= link_to "レシピ投稿履歴一覧を見る", admins_recipes_path, class: "btn btn-primary mt-5" %>
+    </div>
+
+  </div>
+</div>

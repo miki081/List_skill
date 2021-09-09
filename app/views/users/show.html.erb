@@ -1,0 +1,27 @@
+
+
+<p id="notice"></p>
+<div class='col-md-8 offset-md-1'>
+ <h1>My Page</h1>
+ <!--<table class='table table-hover table-inverse'>-->
+
+<style>
+.float{
+    float: left;
+    margin-right: 20px;
+}
+</style> 
+　　 <tr>
+        <div><%= image_tag @user.post_image.to_s, class: "float" %><h2>introduction</h2>
+        <%= @user.introduction %></div>
+    </tr>
+</div>
+</div> 
+    	<h4>name</h4>
+    	<h4><%= @user.nick_name %></h4>
+ <%if @user.id == current_user.id %>
+    <a><%= link_to "編集", edit_user_path(@user), class: "btn btn-secondary" %></a>
+    <a><%= link_to "新しくレシピを作成する", new_recipe_path, class: "btn btn-info" %></a>
+    <a><%= link_to "新しくイベントを作成する",new_event_path, class: "btn btn-info" %></a>
+    <a><%= link_to "新しくオンラインイベントを作成する",new_online_path, class: "btn btn-info" %></a>
+ <% end %>

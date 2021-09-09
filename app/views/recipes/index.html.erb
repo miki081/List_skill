@@ -1,0 +1,23 @@
+<p id="notice"></p>
+<div class='col-md-8 offset-md-1'>
+ <h1>Recipe一覧</h1>
+ <table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+   </thead>
+   <tbody>
+
+<div class="row mx-auto mt-3">
+    <% @recipes.each do |recipe| %>
+<tr>  
+  <td><h2><%= recipe.recipe_title%></h2></td>
+  <td><%= link_to 'show', recipe_path(recipe), class: "btn btn-sm btn-success"  %></td>
+</tr>  
+ </div>
+    <% end %>
+  </div>
+</div>

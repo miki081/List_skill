@@ -1,0 +1,29 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+card-container{
+    display:flex;
+    margin: 20px auto;
+}
+
+img.sized {
+  width: 250;
+  height: 200;
+  margin: 30px auto;
+}
+
+div.container6 {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center }
+div.container6 p {
+  margin: 0 }
+
+.c-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  padding: 0 15px;
+}

@@ -1,0 +1,79 @@
+<p id="notice"></p>
+  <div class="container">
+   <div class= "col-sm-12 col-md-8 col-lg-5 px-sm-0 mx-auto">
+<h2>Event</h2>
+<div class="card-container">
+    <div class="card-img">
+     <h4><%= @event.event_title %></h4>
+     <a><%= image_tag @event.post_image.to_s, class: 'sized' %></a>
+    </div>
+
+    <div class="card-text"><h7>nick_name(企画者)</h7>
+    <h6><%= link_to @user.nick_name, user_path(@user.id) %></h6></div>
+
+    <div class="card-text">
+        <td>イベント紹介</td>
+        <p><%= @event.event_capital %></p>
+    </div>
+    <div class="card-text">
+        <td>郵便番号</td>
+        <p><%= @event.post_code %></p>
+    </div>
+
+     <div class="card-text">
+        <td>住所</td>
+        <p><%= @event.address %></br></p>
+    </div>
+
+
+    <div class="card-text">
+     <td>ジャンル名</td>
+     <td><%= @event.genre.name %></td>
+    </div>
+    <h2>★Map★</h2>
+<script type="text/javascript">
+  function initMap() {
+
+    var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15, 
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    var contentString = '住所：<%= @event.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+
+<script async defer
+              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
+
+<style type="text/css">
+  #map { height: 300px;
+         width: 100%;}
+</style>
+
+<div id="map"></div>
+
+  <% if @user.id == current_user.id %>
+    <td><%= link_to "編集", edit_event_path(@event) %></td>
+    <td><%= link_to 'Destroy', event_path(@event), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
+  <% end %>
+</div>
+</div>

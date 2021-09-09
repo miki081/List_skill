@@ -1,0 +1,21 @@
+<h2>検索結果</h2>
+
+<table class="table table-hover table-inverse">
+  <% if @range == "Event" %>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.event_title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe_title.recipe_title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>

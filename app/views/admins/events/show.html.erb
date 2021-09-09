@@ -1,0 +1,15 @@
+<h2>Event</h2>
+<div class="card-container">
+    <div class="card-img">
+    　<h4><%= @event.event_title %></h4>
+    <% @event.images.each do |image| %>
+    <%= image_tag @event.image.to_s, class: 'sized'%>
+    </div>
+    <% end %>
+    <div class="card-text">
+        <p><%= @event.event_capital %></br></p>
+    </div>
+     <td><%= @event.name %></td>
+　<%#if @user.id == current_user.id %>
+    <td><%= link_to "編集", edit_event_path(@event) %></td>
+  <%#end %>
