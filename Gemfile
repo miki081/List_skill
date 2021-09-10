@@ -70,7 +70,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
-gem 'mini_magick'
+# gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem "geocoder"
 
@@ -78,5 +78,3 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
-
-gem "dotenv-rails"
