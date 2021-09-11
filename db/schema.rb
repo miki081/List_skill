@@ -129,7 +129,6 @@ ActiveRecord::Schema.define(version: 2021_09_07_062735) do
     t.string "recipe_image_id", default: "", null: false
     t.text "recipe_capital", default: "", null: false
     t.string "image"
-    t.json "imagse"
     t.string "images"
     t.integer "like_id"
   end
