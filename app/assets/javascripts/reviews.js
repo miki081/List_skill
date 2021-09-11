@@ -1,9 +1,9 @@
-const stars = document.querySelector(".ratings").children;
+var stars = document.querySelector(".ratings").children;
 // const stars = document.getElementsByClassName("ratings").children;
 // id = "rating-value"の要素を取得
-const ratingValue = document.getElementById("rating-value");
+var ratingValue = document.getElementById("rating-value");
 // id = "rating-value-display"の要素を取得
-const ratingValueDisplay = document.getElementById("rating-value-display");
+var ratingValueDisplay = document.getElementById("rating-value-display");
 // indexという変数を定義
 let index;
 
