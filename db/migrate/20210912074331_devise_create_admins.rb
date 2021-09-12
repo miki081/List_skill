@@ -1,18 +1,11 @@
 # frozen_string_literal: true
 
-class DeviseCreateUsers < ActiveRecord::Migration[5.2]
+class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
   def change
-    create_table :users do |t|
+    create_table :admins do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.text :introduction, default: "", null: false
-      t.string :image_id
-      t.boolean :is_valid, default: true, null: false
-      t.string :nick_name
-      t.string :post_image
-      t.integer :like_id
-      t.boolean :is_enabled
 
       ## Recoverable
       t.string   :reset_password_token
@@ -39,12 +32,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.timestamps null: false
+
+      # Uncomment below if timestamps were not included in your original model.
+
+       t.timestamps null: false
     end
 
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
-    # add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    add_index :admins, :email,                unique: true
+    add_index :admins, :reset_password_token, unique: true
+    # add_index :admins, :confirmation_token,   unique: true
+    # add_index :admins, :unlock_token,         unique: true
   end
 end

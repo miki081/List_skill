@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.(params[:id])
+    @user = User.find(params[:id])
     @recipe = Recipe.new
     @event = Event.new
     @online = Online.new
