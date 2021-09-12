@@ -57,14 +57,14 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
     t.integer "genre_id"
-    t.string "event_title", default: "", null: false
-    t.string "event_image_id", default: "", null: false
-    t.text "event_capital", default: "", null: false
+    t.string "event_title", null: false
+    t.string "event_image_id", null: false
+    t.text "event_capital", null: false
     t.datetime "datetime"
     t.time "time"
-    t.string "post_code", default: "", null: false
-    t.string "address", default: "", null: false
-    t.text "page", default: "", null: false
+    t.string "post_code", null: false
+    t.string "address", null: false
+    t.text "page", null: false
     t.float "latitude"
     t.float "ongitude"
     t.string "post_image"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "name", null: false
     t.boolean "is_enabled", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
   create_table "onlines", force: :cascade do |t|
     t.integer "user_id"
     t.integer "genre_id"
-    t.string "event_title", default: "", null: false
-    t.string "event_image_id", default: "", null: false
+    t.string "event_title", null: false
+    t.string "event_image_id", null: false
     t.text "event_capital", null: false
     t.text "page", null: false
     t.string "post_image"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "image_id", default: "", null: false
+    t.string "image_id", null: false
     t.text "capital", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -117,9 +117,9 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
   create_table "recipes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "genre_id"
-    t.string "recipe_title", default: "", null: false
-    t.string "recipe_image_id", default: "", null: false
-    t.text "recipe_capital", default: "", null: false
+    t.string "recipe_title", null: false
+    t.string "recipe_image_id", null: false
+    t.text "recipe_capital", null: false
     t.string "image"
     t.string "images"
     t.integer "like_id"
@@ -130,10 +130,10 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.text "introduction", default: "", null: false
+    t.text "introduction"
     t.string "image_id"
-    t.boolean "is_valid", default: true, null: false
-    t.string "nick_name"
+    t.boolean "is_valid", default: true
+    t.string "nick_name", null: false
     t.string "post_image"
     t.integer "like_id"
     t.boolean "is_enabled"
