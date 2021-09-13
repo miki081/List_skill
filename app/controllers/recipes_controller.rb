@@ -15,13 +15,13 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     if params[:genre_id]
-      # Categoryのデータベースのテーブルから一致するidを取得
+     
       @recipes = Recipe.find(params[:genre_id])
 
-      # category_idと紐づく投稿を取得
+      
       @recipes= @genre.order(created_at: :desc).all
     else
-      # 投稿すべてを取得
+      
       @genres = Recipe.order(created_at: :desc).all
     end
   end
@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
      @recipe = Recipe.new(recipe_params)
      @recipe.user_id = current_user.id
      if @recipe.save!
-        flash[:notice] = "You have created book successfully."
+        flash[:notice] = "You have created successfully."
         redirect_to recipe_path(@recipe.id)
      else
         render :new
@@ -58,7 +58,7 @@ class RecipesController < ApplicationController
   #           format.html{redirect_to books_path, notice: "Book was successfully destroyed."}
   #           format.html{render :book}
   # end
-    redirect_to recipes_path, notice: "Book was successfully destroyed."
+    redirect_to recipes_path
    end
 
    private

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'onlines/new'
   get 'reviews/index'
   get 'reviews/show'
+  
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
