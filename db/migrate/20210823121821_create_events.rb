@@ -13,7 +13,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.text :page
       t.float :latitude
       t.float :ongitude
-      t.string :post_image
+      t.string :post_image, null: false
       t.float :longitude
       t.timestamps
     end

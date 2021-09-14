@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.text "page"
     t.float "latitude"
     t.float "ongitude"
-    t.string "post_image"
+    t.string "post_image", null: false
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.string "recipe_image_id"
     t.text "recipe_capital", null: false
     t.string "image"
-    t.string "images"
+    t.string "images", null: false
     t.integer "like_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
