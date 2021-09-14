@@ -10,11 +10,11 @@
     float: left;
     margin-right: 20px;
 }
-</style> 
+</style>
 　　 <tr>
 <div class= "col-sm-12 col-md-8 col-lg-6 px-sm- mx-auto">
-   <% if @recipe.images.attached? %>
-    <% @recipe.images.each do |image| %>
+   <% if @user.images.attached? %>
+    <% @user.images.each do |image| %>
     <p><%= image_tag image.variant(resize:'300x300').processed %></br>
     <% end %></p>
     <% end %>
@@ -22,7 +22,7 @@
         <%= @user.introduction %></div>
     </tr>
 </div>
-</div> 
+</div>
     	<h4>name</h4>
     	<h4><%= @user.nick_name %></h4>
  <%if @user.id == current_user.id %>
