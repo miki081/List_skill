@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :image_id
       t.boolean :is_valid, default: true
       t.string :nick_name, null: false
-      t.string :post_image
+      t.string :images, default: true, null: false
       t.integer :like_id
       t.boolean :is_enabled
 

@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.text "page"
     t.float "latitude"
     t.float "ongitude"
-    t.string "post_image", default: "t", null: false
+    t.string "iamges", default: "t", null: false
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.string "event_image_id", null: false
     t.text "event_capital", null: false
     t.text "page", null: false
-    t.string "post_image"
+    t.string "iamges", default: "t", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.string "image_id"
     t.boolean "is_valid", default: true
     t.string "nick_name", null: false
-    t.string "post_image"
+    t.string "images", default: "t", null: false
     t.integer "like_id"
     t.boolean "is_enabled"
     t.string "reset_password_token"

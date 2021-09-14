@@ -5,8 +5,8 @@
 <div class="card-container">
     <div class="card-img">
      <h4><%= @event.event_title %></h4>
-   <% if @recipe.images.attached? %>
-    <% @recipe.images.each do |image| %>
+   <% if @event.images.attached? %>
+    <% @event.images.each do |image| %>
     <p><%= image_tag image.variant(resize:'300x300').processed %></br>
     <% end %></p>
     <% end %>

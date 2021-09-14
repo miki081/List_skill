@@ -7,7 +7,7 @@ class CreateOnlines < ActiveRecord::Migration[5.2]
     t.string  :event_image_id, null: false
     t.text    :event_capital, null: false
     t.text    :page, null: false
-    t.string  :post_image
+    t.string  :iamges, default: true, null: false
     t.timestamps
     end
   end
