@@ -12,7 +12,13 @@
 }
 </style> 
 　　 <tr>
-        <div><%= image_tag @user.post_image.to_s, class: "float" %><h2>introduction</h2>
+<div class= "col-sm-12 col-md-8 col-lg-6 px-sm- mx-auto">
+   <% if @recipe.images.attached? %>
+    <% @recipe.images.each do |image| %>
+    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <% end %></p>
+    <% end %>
+ </div><h2>introduction</h2>
         <%= @user.introduction %></div>
     </tr>
 </div>

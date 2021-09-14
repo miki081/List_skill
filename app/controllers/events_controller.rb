@@ -37,7 +37,7 @@ class EventsController < ApplicationController
      @event = Event.new(event_params)
      @event.user_id = current_user.id
      if @event.save
-        flash[:notice] = "You have created book successfully."
+        flash[:notice] = "You have created successfully."
         redirect_to event_path(@event.id)
      else
         render :new
@@ -69,7 +69,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-     params.require(:event).permit(:post_image, :event_title, :event_capital, :post_code, :address, :genre_id, :name )
+     params.require(:event).permit(:event_title, :event_capital, :post_code, :address, :genre_id, :name, images: [] )
   end
 
   def scream_event(event)

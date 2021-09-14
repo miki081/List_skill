@@ -5,7 +5,11 @@
 <div class="card-container">
     <div class="card-img">
      <h4><%= @event.event_title %></h4>
-     <a><%= image_tag @event.post_image.to_s, class: 'sized' %></a>
+   <% if @recipe.images.attached? %>
+    <% @recipe.images.each do |image| %>
+    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <% end %></p>
+    <% end %>
     </div>
 
     <div class="card-text"><h7>nick_name(企画者)</h7>

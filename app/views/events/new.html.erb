@@ -15,9 +15,7 @@
  </div>
 
  <div class="form-group">
-   <%= f.label :post_image %>
-    <%= f.file_field :post_image, class: 'form-control mb-3', accept: 'image/*',　size: '100x100' %>
-    <%= f.hidden_field :post_image_cache %>
+   <%= f.file_field :images, multiple: true, class: "size" %></br>
     ※イベントのイメージが出るような写真を投稿してください。
  </div>
  

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
    devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
- mount_uploader :post_image, PostImageUploader
+   has_many_attached :images
    has_many :recipe, dependent: :destroy
    has_many :event, dependent: :destroy
    has_many :comments, dependent: :destroy

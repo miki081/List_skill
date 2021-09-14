@@ -8,10 +8,11 @@
 	<%= f.text_field :nick_name, class: "name" %>
 </div>
 <div class="field">
-   <%= f.label :post_image %></br>
-   <%= f.file_field :post_image, class: 'form-control mb-3', accept: 'image/*',　size: '100x100' %>
-   <%= f.hidden_field :post_image_cache %>
+   <div class="form-group">
+   <%= f.file_field :images, multiple: true, class: "size" %></br>
+  </div>
 </div>
+
 <div class="field">
    <div class="form-group">
 	<%= f.label :introduction %></br>

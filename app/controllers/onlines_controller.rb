@@ -9,13 +9,13 @@ class OnlinesController < ApplicationController
   def index
      @onlines = Online.all
     if params[:genre_id]
-      
+
       @onlines = Online.find(params[:genre_id])
 
-      
+
       @onlines= @genre.order(created_at: :desc).all
     else
-      
+
       @genres = Online.order(created_at: :desc).all
     end
   end
@@ -61,7 +61,7 @@ class OnlinesController < ApplicationController
   private
 
   def online_params
-     params.require(:online).permit(:post_image, :event_title, :event_capital, :page, :genre_id, :name )
+     params.require(:online).permit(:event_title, :event_capital, :page, :genre_id, :name, images: [] )
   end
 
   def scream_online(online)

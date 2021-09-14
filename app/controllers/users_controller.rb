@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-   params.require(:user).permit(:is_enabled, :nick_name, :email, :post_image, :introduction, :like_id, :image_id  )
+   params.require(:user).permit(:is_enabled, :nick_name, :email, :introduction, :like_id, :image_id, images: [] )
   end
 
   def ensure_correct_user

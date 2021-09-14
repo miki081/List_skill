@@ -15,13 +15,13 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     if params[:genre_id]
-     
+
       @recipes = Recipe.find(params[:genre_id])
 
-      
+
       @recipes= @genre.order(created_at: :desc).all
     else
-      
+
       @genres = Recipe.order(created_at: :desc).all
     end
   end

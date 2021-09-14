@@ -48,13 +48,13 @@ end
 #   def index
 #     @recipes = Recipe.all
 #     if params[:genre_id]
-#       # Categoryのデータベースのテーブルから一致するidを取得
+#      
 #       @recipes = Recipe.find(params[:genre_id])
        
-#       # category_idと紐づく投稿を取得
+#     
 #       @recipes= @genre.order(created_at: :desc).all
 #     else
-#       # 投稿すべてを取得
+#      
 #       @genres = Recipe.order(created_at: :desc).all
 #     end
 #   end
