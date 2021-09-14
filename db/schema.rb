@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_074331) do
     t.integer "user_id"
     t.integer "genre_id"
     t.string "event_title", null: false
-    t.string "event_image_id", null: false
+    t.string "event_image_id"
     t.text "event_capital", null: false
     t.text "page", null: false
     t.string "iamges", default: "t", null: false
