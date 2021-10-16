@@ -5,32 +5,32 @@
 <div class="card-container">
     <div class="card-img">
     　<h4><%= @recipe.recipe_title %></h4>
-  
-  
+
+
   <div class= "col-sm-12 col-md-8 col-lg-6 px-sm- mx-auto">
    <% if @recipe.images.attached? %>
     <% @recipe.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
     <% end %>
   </div>
- 
+
     <div class="card-text">
       　<td>レシピ内容</td>
-        <p><%= @recipe.recipe_capital %></br></p>
+        <p><%= @recipe.recipe_capital %><br/></p>
     </div>
      <td>ジャンル名</td>
-     <td><%= @recipe.genre.name %></td></br>
-    
+     <td><%= @recipe.genre.name %></td><br/>
+
   </div>
 　<%if @user.id == current_user.id %>
 　<h3>内容を変更する</h3>
     <td><%= link_to "編集", edit_recipe_path(@recipe) %></td>
     <td><%= link_to 'Destroy', recipe_path(@recipe), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
   <%end %>
-  
-  
-  
+
+
+
   <div class= "recipecomment__box__content" %>
     <%= form_with(model:[@recipe, @comment], class: "message-form") do |form| %>
       <p>※相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。</p>
@@ -55,7 +55,7 @@
       <% end %>
     <% end %>
  </div>
- 
+
  <% if @recipe.liked_by?(current_user) %>
     <p>
       <%= link_to recipe_likes_path(@recipe), method: :delete do %>
@@ -71,4 +71,3 @@
   <% end %>
   </div>
   </div>
-  

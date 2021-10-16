@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
   # def self.looks(search, word)
   #     @recipe = Recipe.all
    has_many_attached :images
+   validates :recipe_title, presence: true
 
   # end
    # attachment :image_id

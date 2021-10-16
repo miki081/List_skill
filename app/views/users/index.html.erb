@@ -43,9 +43,9 @@
     <div class="row">
     <% @events.each do |event| %>
     <div class="col-lg-3 col-md-6 mb-4">
-          <% if @event.images.attached? %>
-    <% @event.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+          <% if event.images.attached? %>
+    <% event.images.each do |image| %>
+    <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
     <% end %>
           <span class="red-border px-3">
@@ -61,17 +61,16 @@
  <h1>New Online_Event!!</h1>
 <div class="container">
 <div class="row">
-    <% @onlines.each do |online| %>
   <div class="col-lg-3 col-md-6 mb-4">
-    class="col-lg-3 col-md-6 mb-4">
-          <% if @online.images.attached? %>
-    <% @online.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <% @onlines.each do |online| %>
+    <% if online.images.attached? %>
+    <% online.images.each do |image| %>
+    <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
     <% end %>
     <span class="red-border px-3">
        <%= link_to online_path(online) do %>
-      <%= online.event_title%></h3></td>
+      <%= online.event_title%></h3>
     <% end %>
  </div>
     <% end %>

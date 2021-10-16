@@ -7,7 +7,7 @@
      <h4><%= @event.event_title %></h4>
    <% if @event.images.attached? %>
     <% @event.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
     <% end %>
     </div>
@@ -26,7 +26,7 @@
 
      <div class="card-text">
         <td>住所</td>
-        <p><%= @event.address %></br></p>
+        <p><%= @event.address %><br/></p>
     </div>
 
 
@@ -40,7 +40,7 @@
 
     var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
     var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15, 
+              zoom: 15,
               center: test
               });
     var transitLayer = new google.maps.TransitLayer();

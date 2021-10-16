@@ -13,15 +13,17 @@
    </thead>
    <tbody>
 <div class="row mx-auto mt-3">
-    <% @events.each do |event| %>
+
   <tr>
-    <td>  <% if @event.images.attached? %>
-    <% @event.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
-    <% end %></p>
-    <% end %></td>
-    <td><h3><%= event.event_title%></h3></td>
-    <td><%= link_to 'show', event_path(event), class: "btn btn-sm btn-success" %></td>
+    <td> <% @events.each do |event| %>
+      <% if event.images.attached? %>
+     <% event.images.each do |image| %>
+     <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
+     <% end %></p>
+     <% end %></td>
+     <td><h3><%= event.event_title%></h3></td>
+     <td><%= link_to 'show', event_path(event), class: "btn btn-sm btn-success" %></td>
+    </td>
   </tr>
  </div>
     <% end %>

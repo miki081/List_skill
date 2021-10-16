@@ -7,27 +7,33 @@
 
 <style>
 .float{
-    float: left;
+    float: center;
     margin-right: 20px;
 }
 </style>
-　　 <tr>
-<div class= "col-sm-12 col-md-8 col-lg-6 px-sm- mx-auto">
+<tr>
+ <div class= "col-sm-12 col-md-8 col-lg-6 px-sm- mx-auto">
    <% if @user.images.attached? %>
     <% @user.images.each do |image| %>
-    <p><%= image_tag image.variant(resize:'300x300').processed %></br>
+    <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
     <% end %>
- </div><h2>introduction</h2>
-        <%= @user.introduction %></div>
+ </div>
+        <h4>name</h4>
+    	<h4><%= @user.nick_name %></h4>
+    	<h2>introduction</h2>
+        <%= @user.introduction %>
+      </div>
     </tr>
 </div>
 </div>
-    	<h4>name</h4>
-    	<h4><%= @user.nick_name %></h4>
  <%if @user.id == current_user.id %>
-    <a><%= link_to "編集", edit_user_path(@user), class: "btn btn-secondary" %></a>
-    <a><%= link_to "新しくレシピを作成する", new_recipe_path, class: "btn btn-info" %></a>
-    <a><%= link_to "新しくイベントを作成する",new_event_path, class: "btn btn-info" %></a>
-    <a><%= link_to "新しくオンラインイベントを作成する",new_online_path, class: "btn btn-info" %></a>
+   <tr>
+    <td>
+     <%= link_to "編集", edit_user_path(@user), class: "btn btn-secondary mt-3" %></a>
+     <%= link_to "新しくレシピを作成する", new_recipe_path, class: "btn btn-info mt-3" %></a>
+     <%= link_to "新しくイベントを作成する",new_event_path, class: "btn btn-info mt-3" %></a>
+     <%= link_to "新しくオンラインイベントを作成する",new_online_path, class: "btn btn-info mt-3" %></a>
+    </td>
+   </tr>
  <% end %>
