@@ -14,18 +14,18 @@
    <tbody>
   <tbody>
 <div class="row mx-auto mt-3">
-    
-  <tr>  
+
+  <tr>
   　<% @onlines.each do |online| %>
-  <td>
+   <td>
     <% if online.images.attached? %>
     <% online.images.each do |image| %>
     <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>
-    <% end %>
+    <% end %></td>
     <td><h3><%= online.event_title%></h3></td>
     <td><%= link_to 'show', online_path(online), class: "btn btn-sm btn-success" %></td>
-  </td>
+   </td>
   </tr>
  </div>
     <% end %>
