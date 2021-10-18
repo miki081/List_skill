@@ -69,7 +69,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-     params.require(:event).permit(:event_title, :event_capital, :post_code, :address, :genre_id, :name, images: [] )
+     params.require(:event).permit(:event_title, :event_capital, :post_code, :address, :genre_id, :name, :latitude, :longitude, images: [] )
   end
 
   def scream_event(event)
