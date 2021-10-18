@@ -15,10 +15,10 @@
   <tbody>
 <div class="row mx-auto mt-3">
     
-  <tr>
+  <tr>  
+  　<% @onlines.each do |online| %>
   <td>
-    <% @onlines.each do |online| %>
-      <% if online.images.attached? %>
+    <% if online.images.attached? %>
     <% online.images.each do |image| %>
     <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
     <% end %></p>

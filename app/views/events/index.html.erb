@@ -15,7 +15,8 @@
 <div class="row mx-auto mt-3">
 
   <tr>
-    <td> <% @events.each do |event| %>
+    <% @events.each do |event| %>
+    <td> 
       <% if event.images.attached? %>
      <% event.images.each do |image| %>
      <p><%= image_tag image.variant(resize:'300x300').processed %><br/>
