@@ -32,10 +32,6 @@
 <https://app.diagrams.net/#G1vPhaJo3T19FQNumsyMomaFhvOOxNwARZ>
 -ワイヤーフレーム
 
-## チャレンジ要素一覧
-
-<https://docs.google.com/spreadsheets/d/1UcRWy13Jv-aG20-0RGiC1UxNTCZh2f787uEExx16-kE/edit#gid=0>
-
 ## 機能一覧
 - いいね機能
 - コメント機能
